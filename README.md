@@ -1,5 +1,6 @@
 # Llam2-email-generator
  
+![Front End](https://github.com/jithsg/Llam2-email-generator/blob/main/email.png)
 
 This repository hosts a Streamlit application that leverages Llam2-7B-Chat and LangChain's capabilities to generate emails based on user inputs. It integrates Llam2-7B through the CTransformers library from LangChain, providing an efficient and effective way to generate contextually relevant email texts.
 
