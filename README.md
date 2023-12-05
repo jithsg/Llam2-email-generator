@@ -19,7 +19,7 @@ This repository hosts a Streamlit application that leverages Llam2-7B-Chat and L
 ### Installation and Usage
 
 1. Clone the repository.
-2. Install required packages: `pip install -r requirements.txt'.
+2. Install required packages: `pip install -r requirements.txt`.
 3. Run the Streamlit app: `streamlit run app.py`.
 4. Access the web interface, input your details, and generate emails.
 
