@@ -3,7 +3,7 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
 
 #Function to get the response back
-# def getLLMResponse(form_input,email_sender,email_recipient,email_style):
+def getLLMResponse(form_input,email_sender,email_recipient,email_style):
 #     #llm = OpenAI(temperature=.9, model="text-davinci-003")
 
 #     # Wrapper for Llama-2-7B-Chat, Running Llama 2 on CPU
@@ -17,30 +17,30 @@ from langchain.llms import CTransformers
 
 #     #C Transformers is the Python library that provides bindings for transformer models implemented in C/C++ using the GGML library
 
-#     llm = CTransformers(model='models/llama-2-7b-chat.ggmlv3.q8_0.bin',     #https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
-#                     model_type='llama',
-#                     config={'max_new_tokens': 256,
-#                             'temperature': 0.01})
+    llm = CTransformers(model='model/llama-2-7b-chat.ggmlv3.q8_0.bin',     #https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/tree/main
+                    model_type='llama',
+                    config={'max_new_tokens': 256,
+                            'temperature': 0.01})
     
     
 #     #Template for building the PROMPT
-#     template = """
-#     Write a email with {style} style and includes topic :{email_topic}.\n\nSender: {sender}\nRecipient: {recipient}
-#     \n\nEmail Text:
+    template = """
+    Write a email with {style} style and includes topic :{email_topic}.\n\nSender: {sender}\nRecipient: {recipient}
+    \n\nEmail Text:
     
-#     """
+    """
 
 #     #Creating the final PROMPT
-#     prompt = PromptTemplate(
-#     input_variables=["style","email_topic","sender","recipient"],
-#     template=template,)
+    prompt = PromptTemplate(
+    input_variables=["style","email_topic","sender","recipient"],
+    template=template,)
 
   
 #     #Generating the response using LLM
-#     response=llm(prompt.format(email_topic=form_input,sender=email_sender,recipient=email_recipient,style=email_style))
-#     print(response)
+    response=llm(prompt.format(email_topic=form_input,sender=email_sender,recipient=email_recipient,style=email_style))
+    print(response)
 
-#     return response
+    return response
 
 
 st.set_page_config(page_title="Generate Emails",
@@ -67,5 +67,5 @@ submit = st.button("Generate")
 
 #When 'Generate' button is clicked, execute the below code
 if submit:
-    # st.write(getLLMResponse(form_input,email_sender,email_recipient,email_style))
-    st.write("Email Generated")
+    st.write(getLLMResponse(form_input,email_sender,email_recipient,email_style))
+    # st.write("Email Generated")
